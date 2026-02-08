@@ -30,4 +30,49 @@ MyLinkedList.prototype.addAtHead = function(val) {
     this.size++;
 }
 
-My
+MyLinkedList.prototype.addAtTail = function(val){
+    const newNode = new Node(val);
+    if(!head){
+        this.head = newNode;
+    }
+    else{
+        let current = this.head;
+        while(current.next){
+            current = current.next;
+        }
+
+        current.next = newNode;
+    }
+    this.size++;
+}
+
+MyLinkedList.prototype.addAtIndex = function(index, val) {
+    if(index<0 || index>=this.size) return -1
+    if(index === 0) return this.addAtHead(val);
+    if(index === this.size) return this.addAtTail(val);
+    const newNode = new Node(val);
+    let current = this.head;
+
+    for(let i=0;i<index-1;i++){
+        current = current.next;
+    }
+    newNode.next = current.next;
+    current.next = newNode;
+    this.size++;
+}
+
+MyLinkedList.prototype.deleteAtIndex = function(index, val){
+    if(index < 0 || index >= this.size) return -1
+    if(index === 0) 
+        this.head = this.head.next;
+    else{
+        let current = this.head;
+        for(let i=0 ;i<index-1;i++){
+            current = current.next;
+        }
+
+        current.next = current.next.next;
+    }
+
+    this.size--;
+}
