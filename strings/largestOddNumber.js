@@ -11,11 +11,6 @@
 // Start from the end: ‘2’ → even → skip
 // Next: ‘5’ → odd → return "5"
 
-
-
-
-
-
 var largestOddNumber = function(s) {
       let n = s.length - 1;
       while (n >= 0) {
