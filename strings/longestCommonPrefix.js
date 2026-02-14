@@ -1,4 +1,19 @@
+// This problem focuses on finding the longest common prefix string shared among an array of strings. If no common prefix exists, the result should be an empty string.
 
+// Steps
+// Initialize a pointer x to track character positions in the first string.
+// Iterate through each character of the first string using while loop.
+// For every character at position x in the first string, compare it with the character at the same position in the other strings.
+// If a mismatch is found or if the current index exceeds the length of any string, return the substring from the first string from 0 to x.
+// If the loop completes without any mismatch, return the first string entirely (it is the common prefix).
+// Dry Run
+// Input: ["flower", "flow", "flight"]
+
+// x = 0: Compare ‘f’ with all → match
+// x = 1: Compare ‘l’ → match
+// x = 2: Compare ‘o’ vs ‘i’ → mismatch
+// Return "fl"
+  
   var longestCommonPrefix = function(strs) {
       let x = 0;
       while (x < strs[0].length) {
