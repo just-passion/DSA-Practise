@@ -6,7 +6,6 @@
 function bubbleSort(arr, item){
     let n = arr.length;
     for(let i=0; i<n-1; i++){
-
         let isSwapped = false;
         for(let j=0; j<n-1-i; j++){ //for iterating through array
             if(arr[j] > arr[j+1]){
@@ -14,7 +13,6 @@ function bubbleSort(arr, item){
                 arr[j+1] = arr[j];
                 arr[j] = temp;
             }
-
             isSwapped = true;
         }
 
